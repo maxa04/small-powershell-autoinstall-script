@@ -1,17 +1,18 @@
-# software-autoinstallation-via-powershell
-Ein Script was es einfach ermöglicht Software mit dem Paketmanager chocolatey zu installieren
+# Small PowerShell Auto-Install Script
+A script that simplifies software installation using the Chocolatey package manager
 
----
-# Vorraussetzungen
-- ***Betriebssystem:*** Windows
-- Administratorrechte auf dem jeweilligen PC
+## Prerequisites
+- **Operating System:** Windows
+- Administrator rights on the respective PC
 
-# Softwareauswahl
-Stellen Sie sicher das die ausgewählte Software auch mit dem Paketmanager "chocolatey" installiert werden kann.
-Dies kann einfach auf der [Webseite](https://community.chocolatey.org/packages) überprüft werden.
+## Software Selection
+Ensure that the selected software can be installed with the "Chocolatey" package manager.
+This can be easily verified on the [website](https://community.chocolatey.org/packages).
 
-# Skript einrichten
-Wenn Sie geprüft haben ob die Software verfügbar ist können Sie diese nacheinander wie folgt in das Array ***$packages*** einfügen.
+## Setting Up the Script
+After verifying the software availability, you can insert them one after another into the ***$packages*** array as follows:
+
+
 
 ```Powershell
 $packages = @(
@@ -24,28 +25,21 @@ $packages = @(
 )
 ```
 
-Nicht vergessen das Script zu speichern!
+Don't forget to save the script!
 
-# Script ausführen
-Powershell als Administrator starten und das Script vom CLI ausführen.
+## Executing the Script
+Start PowerShell as an administrator and run the script from the CLI.
 
-# Fehlerbehebung
+## Troubleshooting
 
-## Execution Policy
+### Execution Policy
 
-### Ursache
-Der Fehler tritt auf, weil die Ausführung von PowerShell-Skripten auf Ihrem System durch die **Execution Policy** blockiert ist.
+#### Cause
+The error occurs because the execution of PowerShell scripts on your system is blocked by the **Execution Policy**.
 
-### Fehlerbild
-*...kann nicht geladen werden, da die Ausführung von Skripts auf diesem System deaktiviert ist. Weitere Informationen finden Sie unter "about_Execution_Policies"*
+#### Error Message
+*...cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies*
 
-### Lösung
+#### Solution
 
-Folgenden Befehl als Administrator in Powershell ausführen
-```Powershell
-Set-ExecutionPolicy RemoteSigned
-```
-
-
-
-
+Execute the following command as an administrator in PowerShell:
