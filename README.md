@@ -44,3 +44,6 @@ The error occurs because the execution of PowerShell scripts on your system is b
 #### Solution
 
 Execute the following command as an administrator in PowerShell:
+```Powershell
+Set-ExecutionPolicy RemoteSigned
+```
