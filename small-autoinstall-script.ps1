@@ -19,12 +19,8 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 
 # List of packages to install (always the latest version)
 $packages = @(
-    "crystaldiskinfo",
-    "cpu-z",
-    "gpu-z",
-    "hwinfo",
-    "winscp",
-    "putty"
+    "software1",
+    "software2"
 )
 
 # Installation of packages
