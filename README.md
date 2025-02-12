@@ -10,6 +10,7 @@ Ensure that the selected software can be installed with the "Chocolatey" package
 This can be easily verified on the [website](https://community.chocolatey.org/packages).
 
 ## Setting Up the Script
+Download the [Script](https://raw.githubusercontent.com/maxa04/small-powershell-autoinstall-script/refs/heads/main/small-autoinstall-script.ps1) from Repository
 After verifying the software availability, you can insert them one after another into the ***$packages*** array as follows:
 
 
