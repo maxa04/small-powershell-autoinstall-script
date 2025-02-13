@@ -17,24 +17,14 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
-# Categorized list of packages
-$systemTools = @("gpu-z", "cpu-z", "hwinfo", "speecy", "openhardwaremonitor", "latencymon")
-$diskAndFileManagement = @("linux-reader", "crystaldiskinfo", "victoria", "dmde", "photorec", "defraggler", "partition-assistant-standard", "diskgenius", "hdtune", "macrium-reflect-free", "ultraiso")
-$dataRecoveryAndBackup = @("recuva", "backupper-standard", "registry-backup", "easeus-data-recovery")
-$securityAndPrivacy = @("eraser", "veracrypt", "stinger", "wireshark", "keepass", "autoruns", "malwarebytes")
-$fileAndTextEditors = @("fsviewer", "notepadplusplus", "winmerge", "vscode", "fiddler")
-$mediaTools = @("vlc", "irfanview")
-$storageAndISO = @("cdburnerxp", "rufus", "imageusb")
-$developerAndSysAdmin = @("attributechanger", "dependencywalker", "regshot", "sysinternals", "powershell-core", "imdisk", "git")
-$fileManagers = @("totalcommander", "treesizefree")
-$browsers = @("googlechrome", "firefox", "brave")
-$remoteAccessAndNetworking = @("anydesk.install", "winscp", "putty", "mobaxterm")
-
-# Combine all packages
-$allPackages = $systemTools + $diskAndFileManagement + $dataRecoveryAndBackup + $securityAndPrivacy + $fileAndTextEditors + $mediaTools + $storageAndISO + $developerAndSysAdmin + $fileManagers + $browsers + $remoteAccessAndNetworking
+# List of packages to install (always the latest version)
+$packages = @(
+    "software1",
+    "software2"
+)
 
 # Installation of packages
-foreach ($pkg in $allPackages) {
+foreach ($pkg in $packages) {
     Write-Host "Installing $pkg ..."
     choco install $pkg -y --no-progress
     if ($LASTEXITCODE -ne 0) {
